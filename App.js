@@ -5,7 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import Notas from "./screens/Notas";
 import CreateNote from "./screens/CreateNote";
-import DetailsNote from "./screens/DetailsNote";
+import EditNote from "./screens/EditNote";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -34,10 +34,10 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="Detail"
-          component={DetailsNote}
+          name="Editar"
+          component={EditNote}
           options={{
-            title: "Detalles de nota",
+            title: "Editar nota",
             headerTitleAlign: "center",
             headerStyle: { backgroundColor: "#000" },
             headerTintColor: "white",

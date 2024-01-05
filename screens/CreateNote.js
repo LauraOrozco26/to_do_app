@@ -134,7 +134,7 @@ export default function CreateNote(props) {
             <View>
               <TouchableOpacity style={styles.botonEnviar} onPress={saveNote} >
                 <Text style={styles.textoBtnEnviar}>
-                  Guardar una nueva nota
+                  Guardar una nueva tarea
                 </Text>
               </TouchableOpacity>
             </View>
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     },
     botonDate:{
         backgroundColor:'#000',
-        borderRadius:5,
+        borderRadius:15,
         padding:10,
         width:'30%',
         height:'90%',

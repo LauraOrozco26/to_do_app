@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Text, StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native'
-
+import { Text, StyleSheet, View, ScrollView, TouchableOpacity, Alert } from 'react-native'
+import { FontAwesome } from '@expo/vector-icons';
 import appFirebase from '../credenciales'
 import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoct} from 'firebase/firestore'
 import {ListItem, Avatar} from '@rneui/themed'
@@ -13,6 +13,17 @@ const db = getFirestore(appFirebase)
 export default function Notas(props) {
 
     const [lista, setLista] = useState([])
+
+    const deleteNote = async (id) => {
+        try {
+          await deleteDoc(doc(db, 'notas', id));
+          Alert.alert('Éxito', 'Nota eliminada con éxito');
+          const updatedList = lista.filter((note) => note.id !== id);
+          setLista(updatedList);
+        } catch (error) {
+          console.error('Error al eliminar la nota:', error);
+        }
+      };
 
     //logica para llamar la lista de documentos
     useEffect(() => {
@@ -37,26 +48,27 @@ export default function Notas(props) {
         }
         getLista()
     }, [lista])
-   
+  
     return (
       <ScrollView>
         <View>
             <TouchableOpacity style={styles.boton} onPress={()=>props.navigation.navigate('Crear')}>
-                <Text style={styles.textoBoton}>Agregar una nueva nota</Text>
+                <Text style={styles.textoBoton}>Agregar una nueva tarea</Text>
             </TouchableOpacity>
         </View>
 
         <View style={styles.contenedor}>
             {lista.map((not)=>(
-                <ListItem bottomDivider key={not.id} onPress={()=>{props.navigation.navigate('Detail',{
-                    notaId: not.id
-                })}} >
-                    <ListItemChevron/>
-                    
+                <ListItem bottomDivider key={not.id}>
                     <ListItemContent>
                         <ListItemTitle style={styles.titulo}>{not.titulo}</ListItemTitle>
                         <ListItemSubtitle>{not.fecha}</ListItemSubtitle>
                     </ListItemContent>
+                    <FontAwesome name="pencil" size={24} color="black" style={styles.icono} onPress={() => {props.navigation.navigate('Editar',{
+                    notaId: not.id
+                })}} />
+                    <FontAwesome name="trash" size={24} color="black" style={styles.icono} onPress={() => deleteNote(not.id)} />
+
                 </ListItem> 
             ))}
         </View>
