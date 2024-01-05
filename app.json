@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "firstapp-reactnat",
-    "slug": "firstapp-reactnat",
+    "name": "to_do_app",
+    "slug": "to_do_app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

@@ -33,3 +33,10 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# Firebase credentials
+credenciales.js
+
+# Specific project files
+app.json
+babel.config.js
