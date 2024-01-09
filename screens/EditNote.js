@@ -6,7 +6,7 @@ import appFirebase from '../credenciales'
 import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoct} from 'firebase/firestore'
 const db = getFirestore(appFirebase)
 
-export default function DetailsNote(props) {
+export default function EditNote(props) {
 
   const [nota, setNota] = useState({})
 
@@ -22,13 +22,7 @@ export default function DetailsNote(props) {
 
   useEffect(()=>{
     getOneNote(props.route.params.notaId)
-  },[])
-
-  const deleteNote = async(id) =>{
-    await deleteDoc(doc(db,'notas', id))
-    Alert.alert('exito', 'nota eliminada con exito')
-    props.navigation.navigate('Notas')
-  }
+  },[]);
    
     return (
       <View>
@@ -38,8 +32,8 @@ export default function DetailsNote(props) {
           <Text style={styles.texto}>Fecha: {nota.fecha}</Text>
           <Text style={styles.texto}> {nota.hora}</Text>
 
-          <TouchableOpacity style={styles.botonEliminar} onPress={()=>deleteNote(props.route.params.notaId)}>
-            <Text style={styles.textoEliminar}> Eliminar</Text>
+          <TouchableOpacity>
+            <Text style={styles.textoEliminar}> Guardar </Text>
           </TouchableOpacity>
         </View>
       </View>
