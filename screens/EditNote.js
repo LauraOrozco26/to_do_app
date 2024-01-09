@@ -174,12 +174,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f0f0f0', // Fondo gris claro
+    backgroundColor: '#f0f0f0',
   },
   caja: {
-    backgroundColor: 'white', // Fondo blanco
-    borderRadius: 10, // Bordes redondeados
-    padding: 20, // Espaciado interno
+    backgroundColor: 'white', 
+    borderRadius: 10, 
+    padding: 20, 
     width: '90%',
   },
   textoInput: {
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginTop: 10,
     borderRadius: 8,
-    width: '100%', // Ocupar el ancho completo de la caja
+    width: '100%', 
   },
   inputDate: {
     width: '100%',
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     margin: 20,
     padding: 10,
-    width: '100%', // Ocupar el ancho completo de la caja
+    width: '100%', 
   },
   textoBtnEnviar: {
     textAlign: 'center',
