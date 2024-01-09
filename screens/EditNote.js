@@ -122,6 +122,7 @@ export default function EditNote(props) {
             placeholder="1/1/2024"
             style={styles.textoDate}
             value={estado.fecha}
+            editable={false}
           />
           <TouchableOpacity
             style={styles.botonDate}
@@ -137,6 +138,7 @@ export default function EditNote(props) {
             placeholder="6 : 30"
             style={styles.textoDate}
             value={estado.hora}
+            editable={false}
           />
           <TouchableOpacity
             style={styles.botonDate}
@@ -177,9 +179,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f0f0',
   },
   caja: {
-    backgroundColor: 'white', 
-    borderRadius: 10, 
-    padding: 20, 
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 20,
     width: '90%',
   },
   textoInput: {
@@ -188,20 +190,23 @@ const styles = StyleSheet.create({
     padding: 10,
     marginTop: 10,
     borderRadius: 8,
-    width: '100%', 
+    width: '100%',
   },
   inputDate: {
     width: '100%',
     flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
   },
   botonDate: {
     backgroundColor: '#000',
     borderRadius: 15,
     padding: 10,
     width: '30%',
-    height: '90%',
-    marginTop: 10,
+    height: 50,
     marginLeft: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   textoDate: {
     borderColor: 'slategray',
@@ -209,6 +214,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginTop: 10,
     borderRadius: 8,
+    flex: 1,
   },
   subtitle: {
     color: 'white',
@@ -221,7 +227,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     margin: 20,
     padding: 10,
-    width: '100%', 
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   textoBtnEnviar: {
     textAlign: 'center',
