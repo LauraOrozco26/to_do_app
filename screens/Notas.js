@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Text, StyleSheet, View, ScrollView, TouchableOpacity, Alert } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons';
 import appFirebase from '../credenciales'
-import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoct} from 'firebase/firestore'
+import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoc} from 'firebase/firestore'
 import {ListItem, Avatar} from '@rneui/themed'
 import { ListItemChevron } from '@rneui/base/dist/ListItem/ListItem.Chevron'
 import { ListItemContent } from '@rneui/base/dist/ListItem/ListItem.Content'
